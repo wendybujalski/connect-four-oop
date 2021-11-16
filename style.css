@@ -1,0 +1,119 @@
+body {
+    background-color: black;
+}
+
+/* Lots of CSS to get the game to position gracefully in the center of the viewport */
+
+#game {
+    min-height: 550px;
+    min-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-height: 550px) {
+    #game {
+        position: absolute;
+        top: 0%;
+        transform: translateX(-50%);
+    };
+}
+
+@media (max-width: 450px) {
+    #game {
+        position: absolute;
+        left: 0%;
+        transform: translateY(-50%);
+    };
+}
+
+@media (max-height: 550px) and (max-width: 450px) {
+    #game {
+        position: absolute;
+        top: 0%;
+        left 0%;
+        transform: translate(0%, 0%);
+    };
+}
+
+#board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+/* game board table CSS */
+
+#board td {
+    width: 50px;
+    height: 50px;
+    border: solid 1px white;
+    position: relative;
+}
+  
+/* pieces are div within game table cells: they draw as colored circles */
+  
+.piece {
+    border-radius: 50%;
+    margin: 5px;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* piece animation CSS - additional CSS for the animations is generated via JS at runtime */
+
+.piece:not(.top) {
+    animation-timing-function: ease-in;
+}
+
+.p1 {
+    background-color: cyan;
+}
+
+.p2 {
+    background-color: magenta;
+}
+
+/* Game title CSS - this code (along with some JS) makes the title display in the current player's color. */
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+h1.p1 {
+    background-color: black;
+    color: cyan;
+}
+
+h1.p2 {
+    background-color: black;
+    color: magenta;
+}
+
+/* Top Row CSS - this code styles the divs in the top row for the move indicator */
+
+.top {
+    background-color: black;
+}
+
+.top.p1:hover {
+    background-color: cyan;
+}
+
+.top.p2:hover {
+    background-color: magenta;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+    border: dashed 1px white;
+}
