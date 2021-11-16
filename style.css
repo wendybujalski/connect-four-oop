@@ -73,29 +73,10 @@ body {
     animation-timing-function: ease-in;
 }
 
-.p1 {
-    background-color: cyan;
-}
-
-.p2 {
-    background-color: magenta;
-}
-
 /* Game title CSS - this code (along with some JS) makes the title display in the current player's color. */
 
 h1 {
-    color: white;
     text-align: center;
-}
-
-h1.p1 {
-    background-color: black;
-    color: cyan;
-}
-
-h1.p2 {
-    background-color: black;
-    color: magenta;
 }
 
 /* Top Row CSS - this code styles the divs in the top row for the move indicator */
@@ -104,16 +85,13 @@ h1.p2 {
     background-color: black;
 }
 
-.top.p1:hover {
-    background-color: cyan;
-}
-
-.top.p2:hover {
-    background-color: magenta;
-}
-
 /* column-top is table row of clickable areas for each column */
 
 #column-top td {
     border: dashed 1px white;
+}
+
+#start-new-game {
+    color: white;
+    margin: 10px;
 }
